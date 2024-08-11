@@ -18,7 +18,6 @@ func GetBooks(w http.ResponseWriter, r *http.Request) {
 	}
 	jsonResponse := utils.ConverToJSON(w, result)
 	w.Write(jsonResponse)
-	return 
 }
 
 func CreateBook(w http.ResponseWriter, r *http.Request) {
@@ -45,5 +44,4 @@ func CreateBook(w http.ResponseWriter, r *http.Request) {
 
 	jsonResponse := utils.ConverToJSON(w, book)
 	w.Write(jsonResponse)
-	return
 }
