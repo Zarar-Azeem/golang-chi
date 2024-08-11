@@ -1,17 +1,17 @@
 package main
 
 import (
-	"log"
-	"net/http"
-	"github.com/go-chi/chi/v5"
-	"github.com/go-chi/chi/v5/middleware"
+	"fmt"
+
+	"github.com/Zarar-Azeem/golang-chi/pkg/config"
+	"github.com/Zarar-Azeem/golang-chi/pkg/models"
 )
 
 func main() {
-	r := chi.NewRouter()
-	r.Use(middleware.Logger)
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello World!"))
-	})
-	log.Fatal(http.ListenAndServe(":3000", r))
+	port := ":3000"
+	server := config.NewApiServer(port)
+	models.Init()
+
+	fmt.Printf("It is running at localhost%v", port)
+	server.Run()
 }

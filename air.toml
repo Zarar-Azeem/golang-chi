@@ -1,0 +1,11 @@
+
+# air.toml
+root = "./"
+build_cmd = "go build main ."
+run_cmd = "main"
+
+[color]
+  main = "yellow"
+  watch = "cyan"
+  build = "green"
+  log = "white"
