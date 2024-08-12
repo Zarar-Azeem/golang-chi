@@ -6,9 +6,9 @@ import (
 )
 
 
-func ConverToJSON[T any](w http.ResponseWriter,result T) []byte {
+func ConverToJSON[T any](w http.ResponseWriter,result T , message string) []byte {
 	response := map[string]interface{}{
-		"message": "Data received successfully",
+		"message": message,
 		"data":    result,
 	}
 	jsonResponse, _ := json.Marshal(response)
